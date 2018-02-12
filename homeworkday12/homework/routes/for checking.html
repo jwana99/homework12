@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>where is my mistake :)</title>
+    <style>
+        h3 {
+            text-decoration: underline
+        ;
+
+            color: crimson
+        ;
+        }
+        /*the i write myself by myself title*/
+        h4 {
+            font-family: 'Waiting for the Sunrise', cursive;
+            font-size: 20px;
+            margin: 0 auto;
+            letter-spacing: 6px;
+            font-weight: bold;
+            color: crimson;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <header class="blog-header py-3">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-4 pt-1">
+                      <h4 class="typewriter" id="typedtext">So you think you can be a programmer :)</h4>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a class="blog-header-logo text-dark" href="#">
+                            <img src="notm/Clearly+Agile+-+Types+of+Programmers+-+Header+Bar.png" height="100"
+                                 width="100"/></a>
+                    </div>
+                    <div class="col-md-4 justify-content-end align-items-center">
+                        <button style="background-color: darkgrey" onclick="myFunction()"
+                                class="btn btn-m btn-outline-warning">
+                            <h6>Press me so i could take you
+                                somewhere</h6> <!--responsive but how to make it under the logo-->
+                        </button>
+                        <div id="snackbar">NO ACTUALLY I DON'T <br>TAKE STRAGERS WITH ME :)</div>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row justify-content-between">
+        <div class="col-md-6">
+            <h3>Historical background :</h3>
+            <p class="text2">British countess and mathematician Ada Lovelace is often considered the first computer
+                programmer, as she blah blah blah</p>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row justify-content-end">
+        <div class="col-md-6 col-12">
+            <h3>What it needs to be a programmer :</h3>
+            <ul>
+                <li>Critical Thinking -- Using logic and reasoning to identify the strengths and weaknesses of
+                    alternative solutions, conclusions or approaches to problems.
+                </li>
+                <li>Complex Problem Solving -- Identifying complex problems and reviewing related information to develop
+                    and evaluate options and implement solutions.
+                </li>
+                <li> Operations Analysis -- Analyzing needs and product requirements to create a design.</li>
+                <li>Technology Design -- Generating or adapting equipment and technology to serve user needs.</li>
+                <li> Equipment Selection -- Determining the kind of tools and equipment needed to do a job.</li>
+                <li>Installation -- Installing equipment, machines, wiring, or programs to meet specifications.</li>
+                <li> Mathematics -- Using mathematics to solve problems.</li>
+                <li> Judgment and Decision Making -- Considering the relative costs and benefits of potential actions to
+                    choose the most appropriate one.
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script>
+    var aText = new Array(
+        "<h4>So you think you can be a programmer :)</h4>"
+    );
+    var iSpeed = 100; // time delay of print out
+    var iIndex = 0; // start printing array at this posision
+    var iArrLength = aText[0].length; // the length of the text array
+    var iScrollAt = 20; // start scrolling up at this many lines
+
+    var iTextPos = 0; // initialise text position
+    var sContents = ''; // initialise contents variable
+    var iRow; // initialise current row
+
+    function typewriter() {
+        sContents = ' ';
+        iRow = Math.max(0, iIndex - iScrollAt);
+        var destination = document.getElementById("typedtext");
+
+        while (iRow < iIndex) {
+            sContents += aText[iRow++] + '<br />';
+        }
+        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+        if (iTextPos++ == iArrLength) {
+            iTextPos = 0;
+            iIndex++;
+            if (iIndex != aText.length) {
+                iArrLength = aText[iIndex].length;
+                setTimeout("typewriter()", 500);
+            }
+        } else {
+            setTimeout("typewriter()", iSpeed);
+        }
+    }
+
+    typewriter();
+</script>
+</body>
+</html>
